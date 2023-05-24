@@ -2,11 +2,9 @@ pipeline{
     agent any
 
     stages{
-        stage('git checkout')
+        stage('git checkout') {
 
-        steps{
-           
-           scripts{
+          steps{
 
                    git branch: 'master/', url: 'https://github.com/Mavrick59/project-0.3.git'
            }
