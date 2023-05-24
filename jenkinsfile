@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('git checkout')
+
+        steps{
+           
+           scripts{
+
+                   git branch: 'master/', url: 'https://github.com/Mavrick59/project-0.3.git'
+           }
+        }
+
+    }
+}
