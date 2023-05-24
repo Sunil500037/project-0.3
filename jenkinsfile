@@ -4,7 +4,7 @@ pipeline{
         stage('GIt checkout'){
             steps{
                 script{
-                    git branch: 'master/', url: 'https://github.com/Mavrick59/project-0.3.git'
+                   git 'https://github.com/Mavrick59/project-0.3.git'
                 }
             }
         }
