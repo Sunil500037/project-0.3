@@ -1,14 +1,12 @@
-pipeline{
+pipeline{ 
     agent any
-
-    stages{
-        stage('git checkout') {
-
-          steps{
-
-                  git branch: 'master/', url: 'https://github.com/Mavrick59/project-0.3.git'
-           }
+    stages {
+        stage('GIt checkout'){
+            steps{
+                script{
+                    git branch: 'master/', url: 'https://github.com/Mavrick59/project-0.3.git'
+                }
+            }
         }
-
     }
 }
