@@ -49,7 +49,7 @@ pipeline{
 
                  nexusArtifactUploader artifacts: [[artifactId: 'maven-war-plugin',
                  classifier: '', 
-                 file: 'target/', 
+                 file: 'target/*', 
                  type: 'war']], 
                  credentialsId: 'nexus-auth1', 
                  groupId: 'com.jdevs', 
