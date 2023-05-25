@@ -45,11 +45,7 @@ pipeline{
 
             steps{
 
-                def readPomVersion = readMavenPom file 'pom.xml'
-
-                def nexusRepo = readMavenPom.version.endsWith("2.5-SNAPSHOT") ? "SNAP" : "NEXUS REPO"
-
-                script{
+               script{
 
                  nexusArtifactUploader artifacts: [[artifactId: 'maven-war-plugin',
                  classifier: '', 
