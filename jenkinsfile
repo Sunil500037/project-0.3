@@ -30,11 +30,15 @@ pipeline{
 
             steps{
 
+                script{
+
+                  withSonarQubeEnv(credentialsId: 'soanr-txt'){
+                       sh 'mvn sonar:sonar' 
                 
-                    withSonarQubeEnv('sonar') {
-                        sh 'mvn sonar:sonar'
-                 
-               }
+                    }
+                }
+               
+               
             }
         }
     }
