@@ -28,13 +28,13 @@
    <distributionManagement>
         <repository>
             <id>deployment</id>
-            <name>Internal Releases</name>
-            <url>http://http://http://43.205.206.233:8081/repository/student-rel/</url>
+            <name>student-release</name>
+            <url>http://43.205.206.233:8081/repository/student-release</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
-            <name>Internal Snapshot Releases</name>
-            <url>http://10.128.0.10:8081/repository/student-snap/</url>
+            <name>student-snap</name>
+            <url>http://43.205.206.233:8081/repository/student-snap</url>
         </snapshotRepository>
     </distributionManagement>
   <dependencies>
