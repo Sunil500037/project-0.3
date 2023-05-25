@@ -8,11 +8,11 @@ pipeline{
                 }
             }
         }
-    }
-}   
-        stage('UNIT TESTING')
-
+        stage('UNIT testing'){
+              
             steps{
-                
                 sh 'mvn test'
-               }   
+            }
+        }
+    }
+}
