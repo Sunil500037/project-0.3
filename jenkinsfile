@@ -57,7 +57,7 @@ pipeline{
                  nexusVersion: 'nexus3', 
                  protocol: 'http', 
                  repository:'http://43.205.206.233:8081/studentapps', 
-                 version: '2.5-SNAPSHOT'
+                 version: $
                 }
             }
         }
