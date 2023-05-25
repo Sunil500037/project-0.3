@@ -31,11 +31,42 @@ pipeline{
             steps{
 
                 script{
-                    withSonarQubeEnv('sonar') {
-                        sh 'mvn sonar:sonar'
-                } 
+                    withSonarQubeEnv(pipeline{ 
+    agent any
+    stages {
+        stage('GIt checkout'){
+            steps{
+                script{
+                    git 'https://github.com/Mavrick59/project-0.3.git'
+                }
+            }
+        }
+        stage('UNIT testing'){
+              
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage("Integration Testing"){
+
+            steps{
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+        stage('MVN building'){
+
+            steps{
+                sh 'mvn clean install'
+            }
+        }
+        stage('static code analysis'){
+
+            steps{
+                    withSonarQubeEnvwithSonarQubeEnv(credentialsId: 'soanr-txt') {
+                        sh 'mvn clean package sonar:sonar' 
                }
             }
         }
     }
-}
+{
+         
