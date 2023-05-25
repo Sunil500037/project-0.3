@@ -17,7 +17,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.9.1.2184</version>
+        <version>2.4</version>
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -29,7 +29,7 @@
         <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
-            <url>http://http://13.127.245.168:9000/repository/student-rel/</url>
+            <url>http://http://10.128.0.10:8081/repository/student-rel/</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
