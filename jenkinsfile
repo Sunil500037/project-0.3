@@ -32,7 +32,7 @@ pipeline{
 
                 script{
 
-                  withSonarQubeEnv(credentialsId: 'soanr-txt'){
+                 withSonarQubeEnv(credentialsId: 'admin1') {
                        sh 'mvn sonar:sonar' 
                 
                     }
