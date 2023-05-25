@@ -23,7 +23,7 @@ pipeline{
         stage('MVN building'){
 
             steps{
-                sh 'mvn clean install'
+                sh 'mvn clean package'
             }
         }
         stage('static code analysis'){
