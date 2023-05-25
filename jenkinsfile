@@ -36,30 +36,26 @@ pipeline{
                        sh 'mvn sonar:sonar' 
                 
                     }
-                }
-               
-               
+                }               
             }
         }
-        stage('upload war file to nexus'){
-        
-            steps{
-                script{
-
-                 nexusArtifactUploader artifacts: [[artifactId: 'maven-war-plugin',
-                 classifier: '', 
-                 file: 'target/studentapp-2.5-SNAPSHOT.war', 
-                 type: 'war']], 
-                 credentialsId: 'sudent-app', 
-                 groupId: 'com.jdevs', 
-                 nexusUrl: '43.205.206.233:8081', 
-                 nexusVersion: 'nexus3', 
-                 protocol: 'http', 
-                 repository:'http://43.205.206.233:8081/studentapps', 
-                 version:"${env.BUILD_ID}"
-                }
-            }
-        }
-    }
+    }   stage('NEXUS'){
+	       steps{     	          nexusArtifactUploader(
+        nexusVersion: 'nexus3',
+        protocol: 'http',
+        nexusUrl: '43.205.212.232:8081',
+        groupId: 'com.exam',
+        version: "${env.BUILD_ID}",
+        repository: 'studentapp',
+        credentialsId: 'nexus-auth1',
+        artifacts: [
+            [artifactId: 'studentapp' ,
+             classifier: '',
+             file: 'target/studentapp-2.5-SNAPSHOT.war' ,
+             type: 'war']
+        ]
+     )
+	    
+    }         
 }
     
