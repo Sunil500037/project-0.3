@@ -53,9 +53,19 @@ pipeline{
              classifier: '',
              file: 'target/studentapp-2.5-SNAPSHOT.war' ,
              type: 'war']
-        ]
-    )}
-    }
+            ]  )}
+        }
+        stage("Docker image build"){
+            
+            steps{
 
-}
+                script{
+
+                    sh "docker image build -t $JOB_NAME:v1.$BUILD_ID"
+                    sh "docker image tag $JOB_NAME:v1.$BUILD_ID rejectedpiece/$JOB_NAME:v1.$BUILD_ID"
+                    sh "docker image tag $JOB_NAME:v1.$BUILD_ID rejectedpiece/$JOB_NAME:latest"
+                }
+            }
+        }
+    }
 }    
