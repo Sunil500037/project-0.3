@@ -29,7 +29,7 @@
         <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
-            <url>http://http://10.128.0.10:8081/repository/student-rel/</url>
+            <url>http://http://http://43.205.206.233:8081/repository/student-rel/</url>
         </repository>
         <snapshotRepository>
             <id>deployment</id>
