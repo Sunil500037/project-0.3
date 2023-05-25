@@ -41,5 +41,25 @@ pipeline{
                
             }
         }
+        stage('upload war file to nexus'){
+
+            steps{
+
+                script{
+
+                 nexusArtifactUploader artifacts: [[artifactId: 'maven-war-plugin',
+                 classifier: '', 
+                 file: 'target/', 
+                 type: 'war']], 
+                 credentialsId: 'nexus-auth1', 
+                 groupId: 'com.jdevs', 
+                 nexusUrl: '43.205.206.233:8081', 
+                 nexusVersion: 'nexus3', 
+                 protocol: 'http', 
+                 repository: 'http://43.205.206.233:8081/repository/student-app/', 
+                 version: '2.5-SNAPSHOT'
+                }
+            }
+        }
     }
 }
