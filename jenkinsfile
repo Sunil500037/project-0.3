@@ -41,21 +41,27 @@ pipeline{
                
             }
         }
-        stage('NEXUS'){
+        stage('deploy war into nexus'){
 	       steps{     	 
-            nexusArtifactUploader
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        nexusUrl: '43.205.212.232:8081',
-        groupId: 'com.exam',
-        version: "${env.BUILD_ID}",
-        repository: 'studentapp',
-        credentialsId: 'nexus',
-        artifacts: [
-            [artifactId: 'studentapp' ,
-             classifier: '',
-             file: 'target/studentapp-2.5-SNAPSHOT.war' ,
-             type: 'war']]
+                    nexusArtifactUploader
+                     nexusVersion:'nexus3',
+                     protocol: 'http',
+                    nexusUrl: '43.205.212.232:8081',
+                    groupId: 'com.exam',
+                    version: "${env.BUILD_ID}",
+                    repository: 'studentapp',
+                    credentialsId: 'nexus',
+                          artifacts: [
+                                     [artifactId: 'studentapp' ,
+                                     classifier: '',
+                                     file: 'target/studentapp-2.5-SNAPSHOT.war' ,
+                                      type: 'war']]
+                                       type: 'war']]
+           
+                                      
+            }
+           
+        }                              
     }
 }
     
