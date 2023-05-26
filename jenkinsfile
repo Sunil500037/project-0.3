@@ -47,7 +47,7 @@ pipeline{
         groupId: 'com.exam',
         version: "${env.BUILD_ID}",
         repository: 'studentapp',
-        credentialsId: ''nexus-auth',
+        credentialsId: 'nexus-auth1',
         artifacts: [
             [artifactId: 'studentapp' ,
              classifier: '',
