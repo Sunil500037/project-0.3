@@ -43,7 +43,7 @@ pipeline{
 	       steps{     	          nexusArtifactUploader(
         nexusVersion: 'nexus3',
         protocol: 'http',
-        nexusUrl: '43.205.212.232:8081',
+        nexusUrl: '13.127.41.1:8081',
         groupId: 'com.exam',
         version: "${env.BUILD_ID}",
         repository: 'studentapp',
